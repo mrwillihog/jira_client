@@ -1,0 +1,16 @@
+{
+  "expand": "renderedFields,names,schema,transitions,operations,editmeta,changelog",
+  "id": "4321",
+  "self": "https://example.jira.com/rest/api/2/issue/4321",
+  "key": "PROJECT-1234",
+  "fields": {
+    "timetracking": {
+      "originalEstimate": "10m",
+      "remainingEstimate": "3m",
+      "timeSpent": "6m",
+      "originalEstimateSeconds": 600,
+      "remainingEstimateSeconds": 200,
+      "timeSpentSeconds": 400
+    }
+  }
+}

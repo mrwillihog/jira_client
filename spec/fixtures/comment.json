@@ -1,0 +1,23 @@
+{
+    "self": "http://www.example.com/jira/rest/api/2.0/issue/10010/comment/10000",
+    "id": "10000",
+    "author": {
+        "self": "http://www.example.com/jira/rest/api/2.0/user?username=fred",
+        "name": "fred",
+        "displayName": "Fred F. User",
+        "active": false
+    },
+    "body": "This is a comment",
+    "updateAuthor": {
+        "self": "http://www.example.com/jira/rest/api/2.0/user?username=fred",
+        "name": "fred",
+        "displayName": "Fred F. User",
+        "active": false
+    },
+    "created": "2012-02-15T17:34:37.268-0600",
+    "updated": "2012-02-15T17:34:37.269-0600",
+    "visibility": {
+        "type": "role",
+        "value": "Administrators"
+    }
+}

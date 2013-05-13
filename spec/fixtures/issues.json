@@ -1,0 +1,28 @@
+{
+  "expand": "schema,names",
+  "startAt": 0,
+  "maxResults": 50,
+  "total": 2,
+  "issues": [
+    {
+      "expand": "editmeta,renderedFields,transitions,changelog,operations",
+      "id": "10100",
+      "self": "http://localhost:2990/jira/rest/api/2/issue/10100",
+      "key": "TEST-2",
+      "fields": {
+        "summary": "Something doesnt work",
+        "description": null
+      }
+    },
+    {
+      "expand": "editmeta,renderedFields,transitions,changelog,operations",
+      "id": "10000",
+      "self": "http://localhost:2990/jira/rest/api/2/issue/10000",
+      "key": "TEST-1",
+      "fields": {
+        "summary": "Testing new feature",
+        "description": null
+      }
+    }
+  ]
+}

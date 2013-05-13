@@ -1,0 +1,14 @@
+{
+  "baseUrl": "https://example.jira.com",
+  "version": "5.1.8",
+  "versionNumbers": [
+    5,
+    1,
+    8
+  ],
+  "buildNumber": 787,
+  "buildDate": "2012-10-29T00:00:00.000+0000",
+  "serverTime": "2013-04-24T22:01:45.802+0100",
+  "scmInfo": "823790ce17da57e7ed0220e49723c7b00a6d54dc",
+  "serverTitle": "Example JIRA"
+}

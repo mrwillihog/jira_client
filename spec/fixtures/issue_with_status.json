@@ -1,0 +1,15 @@
+{
+  "expand": "renderedFields,names,schema,transitions,operations,editmeta,changelog",
+  "id": "4321",
+  "self": "https://example.jira.com/rest/api/2/issue/4321",
+  "key": "PROJECT-1236",
+  "fields": {
+    "status": {
+        "self": "https://example.jira.com/jira/rest/api/2.0/status/10000",
+        "description": "The issue is currently being worked on.",
+        "iconUrl": "https://example.jira.com/images/icons/progress.gif",
+        "name": "In Progress",
+        "id": "10000"
+    }
+  }
+}

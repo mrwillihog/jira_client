@@ -1,0 +1,31 @@
+{
+    "startAt": 0,
+    "maxResults": 1,
+    "total": 1,
+    "worklogs": [
+        {
+            "self": "http://www.example.com/jira/rest/api/2.0/issue/10010/worklog/10000",
+            "author": {
+                "self": "http://www.example.com/jira/rest/api/2.0/user?username=fred",
+                "name": "fred",
+                "displayName": "Fred F. User",
+                "active": false
+            },
+            "updateAuthor": {
+                "self": "http://www.example.com/jira/rest/api/2.0/user?username=fred",
+                "name": "fred",
+                "displayName": "Fred F. User",
+                "active": false
+            },
+            "comment": "I did some work here.",
+            "started": "2012-02-15T17:34:37.937-0600",
+            "timeSpent": "3h 20m",
+            "timeSpentSeconds": 12000,
+            "id": "100028",
+            "visibility": {
+                "type": "group",
+                "value": "jira-developers"
+            }
+        }
+    ]
+}

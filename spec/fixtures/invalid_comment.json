@@ -1,0 +1,6 @@
+{
+  "errorMessages": [],
+  "errors": {
+    "comment": "Comment body can not be empty!"
+  }
+}
