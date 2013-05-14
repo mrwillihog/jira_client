@@ -1,0 +1,68 @@
+{
+  "expand": "renderedFields,names,schema,transitions,operations,editmeta,changelog",
+  "id": "10000",
+  "self": "http://localhost:2990/jira/rest/api/2/issue/10000",
+  "key": "TEST-1",
+  "fields": {
+    "subtasks": [
+      {
+        "id": "10001",
+        "key": "TEST-2",
+        "self": "http://localhost:2990/jira/rest/api/2/issue/10001",
+        "fields": {
+          "summary": "This is a subtask",
+          "status": {
+            "self": "http://localhost:2990/jira/rest/api/2/status/1",
+            "description": "The issue is open and ready for the assignee to start work on it.",
+            "iconUrl": "http://localhost:2990/jira/images/icons/status_open.gif",
+            "name": "Open",
+            "id": "1"
+          },
+          "issuetype": {
+            "self": "http://localhost:2990/jira/rest/api/2/issuetype/5",
+            "id": "5",
+            "description": "The sub-task of the issue",
+            "iconUrl": "http://localhost:2990/jira/images/icons/issue_subtask.gif",
+            "name": "Sub-task",
+            "subtask": true
+          },
+          "priority": {
+            "self": "http://localhost:2990/jira/rest/api/2/priority/3",
+            "iconUrl": "http://localhost:2990/jira/images/icons/priority_major.gif",
+            "name": "Major",
+            "id": "3"
+          }
+        }
+      },
+      {
+        "id": "10002",
+        "key": "TEST-3",
+        "self": "http://localhost:2990/jira/rest/api/2/issue/10002",
+        "fields": {
+          "summary": "This is a subtask",
+          "status": {
+            "self": "http://localhost:2990/jira/rest/api/2/status/1",
+            "description": "The issue is open and ready for the assignee to start work on it.",
+            "iconUrl": "http://localhost:2990/jira/images/icons/status_open.gif",
+            "name": "Open",
+            "id": "1"
+          },
+          "issuetype": {
+            "self": "http://localhost:2990/jira/rest/api/2/issuetype/5",
+            "id": "5",
+            "description": "The sub-task of the issue",
+            "iconUrl": "http://localhost:2990/jira/images/icons/issue_subtask.gif",
+            "name": "Sub-task",
+            "subtask": true
+          },
+          "priority": {
+            "self": "http://localhost:2990/jira/rest/api/2/priority/3",
+            "iconUrl": "http://localhost:2990/jira/images/icons/priority_major.gif",
+            "name": "Major",
+            "id": "3"
+          }
+        }
+      }
+    ]
+  }
+}

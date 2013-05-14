@@ -56,7 +56,7 @@ describe JiraClient::API::Issues do
         expect(@issue.status).to be_a_kind_of JiraClient::Status
       end
     end
-    context "with an issuetype", focus: true do
+    context "with an issuetype" do
 
       before do
         stub_get("/issue/PROJECT-1234").with(:query => {:fields => "issuetype"}).to_return(:body => fixture("issue_with_issuetype.json"))
@@ -66,13 +66,32 @@ describe JiraClient::API::Issues do
       it "requests the correct resource" do
         expect(a_get("/issue/PROJECT-1234?fields=issuetype")).to have_been_made
       end
-      it "returns a JiraClient::IssueType" do
-        expect(@issue.issuetype).to be_a_kind_of JiraClient::IssueType
-      end
       it "sets the correct values" do
         type = @issue.issuetype
+        expect(type).to be_a_kind_of JiraClient::IssueType
         type.name.should == "Bug"
         type.description.should == "A problem which impairs or prevents the functions of the product."
+      end
+
+    end
+    context "with subtasks", focus: true do
+
+      before do
+        stub_get("/issue/PROJECT-1234").with(:query => {:fields => "subtasks"}).to_return(:body => fixture("issue_with_subtasks.json"))
+        @issue = JiraClient.find_issue_by_key("PROJECT-1234", :fields => [:subtasks])
+      end
+
+      it "requests the correct resource" do
+        expect(a_get("/issue/PROJECT-1234?fields=subtasks")).to have_been_made
+      end
+      it "sets the correct values" do
+        subtasks = @issue.subtasks
+        expect(subtasks).to be_a_kind_of Array
+        subtasks.each do |subtask|
+          expect(subtask).to be_a_kind_of JiraClient::Issue
+          subtask.summary.should == "This is a subtask"
+          subtask.issuetype.name.should == "Sub-task"
+        end
       end
 
     end
