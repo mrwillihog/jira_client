@@ -56,6 +56,26 @@ describe JiraClient::API::Issues do
         expect(@issue.status).to be_a_kind_of JiraClient::Status
       end
     end
+    context "with an issuetype", focus: true do
+
+      before do
+        stub_get("/issue/PROJECT-1234").with(:query => {:fields => "issuetype"}).to_return(:body => fixture("issue_with_issuetype.json"))
+        @issue = JiraClient.find_issue_by_key("PROJECT-1234", :fields => [:issuetype])
+      end
+
+      it "requests the correct resource" do
+        expect(a_get("/issue/PROJECT-1234?fields=issuetype")).to have_been_made
+      end
+      it "returns a JiraClient::IssueType" do
+        expect(@issue.issuetype).to be_a_kind_of JiraClient::IssueType
+      end
+      it "sets the correct values" do
+        type = @issue.issuetype
+        type.name.should == "Bug"
+        type.description.should == "A problem which impairs or prevents the functions of the product."
+      end
+
+    end
     context "with timetracking" do
 
       before do

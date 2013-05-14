@@ -2,16 +2,18 @@ require "jira_client/status"
 require "jira_client/timetracking"
 require "jira_client/project"
 require "jira_client/worklog"
+require "jira_client/issue_type"
 
 module JiraClient
   class Issue < JiraClient::Base
-    attr_reader :key, :description, :summary, :status, :timetracking, :project, :worklog, :comment
+    attr_reader :key, :description, :summary, :status, :timetracking, :project, :worklog, :comment, :issuetype
 
     convert :status, JiraClient::Status
     convert :timetracking, JiraClient::Timetracking
     convert :comment, JiraClient::Comment
     convert :project, JiraClient::Project
     convert :worklog, JiraClient::Worklog
+    convert :issuetype, JiraClient::IssueType
 
     class << self
 
