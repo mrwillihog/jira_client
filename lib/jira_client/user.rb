@@ -6,5 +6,9 @@ module JiraClient
       @attrs[:active] == true
     end
 
+    def to_s
+      display_name
+    end
+
   end
 end

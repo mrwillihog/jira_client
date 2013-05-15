@@ -16,6 +16,8 @@ module JiraClient
     convert :issuetype, JiraClient::IssueType
     convert :subtasks, JiraClient::Issue
 
+    alias :comments :comment
+
     class << self
 
       def from_response(params)
@@ -26,6 +28,9 @@ module JiraClient
 
     end
 
-    alias :comments :comment
+    def to_s
+      "#{key} #{summary}"
+    end
+
   end
 end

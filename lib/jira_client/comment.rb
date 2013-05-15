@@ -8,5 +8,9 @@ module JiraClient
     convert :update_author, JiraClient::User
     convert :created, lambda {|value| DateTime.parse(value)}
     convert :updated, lambda {|value| DateTime.parse(value)}
+
+    def to_s
+      body
+    end
   end
 end
