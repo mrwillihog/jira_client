@@ -74,7 +74,7 @@ describe JiraClient::API::Issues do
       end
 
     end
-    context "with subtasks", focus: true do
+    context "with subtasks" do
 
       before do
         stub_get("/issue/PROJECT-1234").with(:query => {:fields => "subtasks"}).to_return(:body => fixture("issue_with_subtasks.json"))

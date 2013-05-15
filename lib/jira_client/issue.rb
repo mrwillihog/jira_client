@@ -10,7 +10,7 @@ module JiraClient
 
     convert :status, JiraClient::Status
     convert :timetracking, JiraClient::Timetracking
-    convert :comment, JiraClient::Comment
+    convert :comment, lambda {|response| response[:comments].map {|comment| JiraClient::Comment.from_response(comment) } }
     convert :project, JiraClient::Project
     convert :worklog, JiraClient::Worklog
     convert :issuetype, JiraClient::IssueType
