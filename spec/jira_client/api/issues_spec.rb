@@ -143,6 +143,9 @@ describe JiraClient::API::Issues do
           comment.should be_a_kind_of JiraClient::Comment
         end
       end
+      it "aliases comments" do
+        @issue.comments.should == @issue.comment
+      end
     end
   end
 

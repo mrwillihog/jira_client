@@ -25,5 +25,7 @@ module JiraClient
       end
 
     end
+
+    alias :comments :comment
   end
 end
