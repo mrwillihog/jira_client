@@ -127,6 +127,25 @@ describe JiraClient::API::Issues do
         end
       end
     end
+    context "with assignee" do
+
+      before do
+        stub_get("/issue/PROJECT-1234").with(:query => {:fields => "assignee"}).to_return(:body => fixture("issue_with_assignee.json"))
+        @issue = JiraClient.find_issue_by_key("PROJECT-1234", :fields => [:assignee])
+        @assignee = @issue.assignee
+      end
+
+      it "requests the correct resource" do
+        expect(a_get("/issue/PROJECT-1234?fields=assignee")).to have_been_made
+      end
+      it "returns a user object" do
+        expect(@assignee).to be_a_kind_of JiraClient::User
+      end
+      it "sets the right data" do
+        @assignee.name.should == "admin"
+        @assignee.email_address.should == "admin@example.com"
+      end
+    end
     context "with comments" do
 
       before do

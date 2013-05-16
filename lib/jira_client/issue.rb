@@ -6,7 +6,8 @@ require "jira_client/issue_type"
 
 module JiraClient
   class Issue < JiraClient::Base
-    attr_reader :key, :description, :summary, :status, :timetracking, :project, :worklog, :comment, :issuetype, :subtasks
+    attr_reader :key, :description, :summary, :status, :timetracking,
+                :project, :worklog, :comment, :issuetype, :subtasks, :assignee
 
     convert :status, JiraClient::Status
     convert :timetracking, JiraClient::Timetracking
@@ -15,6 +16,7 @@ module JiraClient
     convert :worklog, JiraClient::Worklog
     convert :issuetype, JiraClient::IssueType
     convert :subtasks, JiraClient::Issue
+    convert :assignee, JiraClient::User
 
     alias :comments :comment
 
