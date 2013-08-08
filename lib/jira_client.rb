@@ -81,10 +81,10 @@ module JiraClient
     end
 
     # Returns a RestClient resource
-    def resource
+    def resource(url=nil)
       raise JiraClient::Error::ConfigurationError, "No configuration found. Please run JiraClient.configure" if JiraClient.configuration.nil?
       @resource ||= begin
-        url = JiraClient.configuration.full_url
+        url = url || JiraClient.configuration.full_url
         options = {
           :headers => {:content_type => :json, :accept => :json}
         }
