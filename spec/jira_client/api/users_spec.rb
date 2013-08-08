@@ -53,4 +53,24 @@ describe JiraClient::API::Users do
     end
   end
 
+  describe "#current_user" do
+
+    before do
+      stub_request(:get, JiraClient.configuration.base_url + "/rest/gadget/1.0/currentUser").to_return(:status => 200, :body => fixture("user.json"))
+      @user = JiraClient.current_user
+    end
+
+    it "requests the correct resource" do
+      expect(a_request(:get, JiraClient.configuration.base_url + "/rest/gadget/1.0/currentUser")).to have_been_made
+    end
+
+    it "returns a user object" do
+      @user.should be_a_kind_of JiraClient::User
+    end
+
+    it "has the correct username" do
+      @user.username.should == "username"
+    end
+  end
+
 end

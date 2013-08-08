@@ -13,6 +13,12 @@ module JiraClient
         object_from_response(JiraClient::User, :get, "/user", :username => username)
       end
 
+      def current_user
+        request = resource(JiraClient.configuration.base_url)
+        response = request["/rest/gadget/1.0/currentUser"].get
+        JiraClient::User.from_response snake_case!(JSON.parse(response, :symbolize_names => true))
+      end
+
     end
   end
 end
